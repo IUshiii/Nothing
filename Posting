@@ -1,0 +1,13 @@
+---
+- name: Remove Morphisec Protector Service on Ubuntu
+  become: yes
+  systemd:
+    name: morphisec-protector
+    state: stopped
+    enabled: no
+
+- name: Uninstall Morphisec Protector on Ubuntu
+  become: yes
+  apt:
+    name: morphisec-protector
+    state: absent
